@@ -8,9 +8,9 @@ shinyServer(function(input, output) {
       maxY <- input$sliderY[2]
       dataX <- iris[iris$Species == input$species, 1]
       dataY <- iris[iris$Species == input$species, 3]
-      xLabel <- ifelse(input$show_xLabel, "Sepal Lenght", "")
-      YLabel <- ifelse(input$show_YLabel, "Petal Lenght", "")
-      title_main <- ifelse(input$title, "Sepal Lenght X Petal Lenght", "")
+      xLabel <- ifelse(input$show_xLabel, "Sepal Length", "")
+      YLabel <- ifelse(input$show_YLabel, "Petal Length", "")
+      title_main <- ifelse(input$title,input$species, "")
       plot(dataX, dataY, xlab = xLabel, ylab = YLabel, main = title_main, xlim = c(minX, maxX), ylim = c(minY, maxY))
     })
 })
